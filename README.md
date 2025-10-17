@@ -19,7 +19,7 @@ The script uses `yt-dlp` to extract the best available video and audio streams f
 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/youtube-downloader.git
+git clone https://github.com/Aman-Raj-bat
 cd youtube-downloader
 
 2. Install the required Python package
