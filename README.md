@@ -24,17 +24,14 @@ cd youtube-downloader
 
 2. Install the required Python package
 
-```bash 
 pip install -r requirements.txt
 
 3. Run the script
 
-```bash 
 python ytDownloader.py
 
 4. Enter the YouTube video URL when prompted
 
-```bash
 Enter YouTube video URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ✅ Download complete! Check this folder for your video.
 
