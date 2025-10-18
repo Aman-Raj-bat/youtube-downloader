@@ -49,7 +49,9 @@ This project is for educational and personal use only. Downloading copyrighted m
 
 Aman Raj
 
- [![GitHub](https://img.shields.io/badge/Github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Aman-Raj-bat)
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Aman-Raj-bat) 
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aman-raj-bharti-716105372/)
 
 # ⭐ Contribute
 
