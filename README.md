@@ -1,57 +1,60 @@
-# 🎥 YouTube Video Downloader 1080p
 
-A Python script that lets you download YouTube videos in up to 1080p quality using the powerful `yt-dlp` library. This tool automatically fetches the best video and audio streams and merges them into a single MP4 file ready for offline playback.
+# YouTube Video Downloader
+
+A Python script that downloads YouTube videos in up to 1080p quality using the `yt-dlp` library. It automatically fetches the best video and audio streams and merges them into a single MP4 file ready for offline playback.
 
 ## Features
 
-- Download YouTube videos in up to 1080p quality
-- Automatically merges video and audio into a single MP4 file
-- Saves the file using the video title
-- Works on individual video links
-- Simple and easy to use command line interface
+- Download YouTube videos in 1080p
+- Automatically merges video and audio into one MP4
+- Saves the file with the video title
+- Works for individual videos
+- Simple command-line interface
 
 ## How It Works
 
-The script uses `yt-dlp` to extract the best available video and audio streams from YouTube. Once downloaded, it merges them into one MP4 file so you can watch offline without any extra steps.
+The script uses `yt-dlp` to find and download the best available video and audio streams from YouTube. Once downloaded, it merges them into a single MP4 so you can watch offline immediately.
 
-## Installation
+## Installation and Usage
 
-1. Clone the repository
-
+#### 1. Clone the repository
 ```bash
-git clone https://github.com/Aman-Raj-bat
+git clone https://github.com/Aman-Raj-bat/youtube-downloader.git
 cd youtube-downloader
-
-2. Install the required Python package
-
+```
+#### 2. Install the required Python package
+```bash
 pip install -r requirements.txt
+```
 
-3. Run the script
-
+#### 3. Run the downloader
+```bash
 python ytDownloader.py
+```
 
-4. Enter the YouTube video URL when prompted
+#### 4. Enter the YouTube video URL when prompted
+```bash
+https://www.youtube.com/<-- the url --> 
+```
 
-Enter YouTube video URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-✅ Download complete! Check this folder for your video.
-
-## License
+# License
 
 This project is licensed under the MIT License. See LICENSE for details.
 
-## ⚠️ Disclaimer
+# ⚠️ Disclaimer
 
-This project is for educational and personal use only.  
-Downloading copyrighted material without permission may violate YouTube’s Terms of Service.  
-Please use responsibly and ensure compliance with applicable laws.
+This project is for educational and personal use only. Downloading copyrighted material without permission may violate YouTube’s Terms of Service. Please use responsibly and comply with applicable laws.
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-Aman Raj  
-📍 [GitHub Profile](https://github.com/Aman-Raj-bat)
+Aman Raj
 
-## ⭐ Contribute
+ [![GitHub](https://img.shields.io/badge/Github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Aman-Raj-bat)
 
-If you find this project helpful, feel free to:  
-- Star 🌟 the repo  
-- Fork 🍴 it and add cool new features (like playlist support, resolution selector, etc.)
+# ⭐ Contribute
+
+If you find this project helpful:
+
+* Star 🌟 the repository.
+
+* Fork 🍴 it and add new features like playlist support, resolution selection and more. 
