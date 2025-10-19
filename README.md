@@ -59,4 +59,4 @@ If you find this project helpful:
 
 * Star 🌟 the repository.
 
-* Fork 🍴 it and add new features like playlist support, resolution selection and more. 
+* Fork it and add new features like playlist support, resolution selection and more. 
