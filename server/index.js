@@ -1,10 +1,20 @@
 const express = require("express");
 const cors = require("cors");
 const ytdl = require("ytdl-core");
+const analyzeRoutes = require("./routes/analyzeRoutes");
+const downloadRoutes = require("./routes/downloadRoutes");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
+// Mount analyze routes
+app.use("/api", analyzeRoutes);
+
+// Mount download routes
+app.use("/api", downloadRoutes);
+
+// Existing download endpoint
 app.get("/download", async (req, res) => {
     const { url } = req.query;
     if (!ytdl.validateURL(url)) {
