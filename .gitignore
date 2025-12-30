@@ -2,4 +2,8 @@ node_modules
 .env
 dist
 *player-script.js
+<<<<<<< HEAD
 tester.js
+=======
+tester.js
+>>>>>>> cb52b464672945671735c094a7985d206512f86e
