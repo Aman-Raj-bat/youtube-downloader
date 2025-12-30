@@ -183,6 +183,17 @@ function App() {
 
         </div>
       </main>
+
+      <footer className="app-footer">
+        <div className="footer-content">
+          <p style={{ textAlign: 'center' }} className="copyright">© 2025 Aman Raj. All rights reserved.</p>
+          {/* <p className="disclaimer">
+            Disclaimer: This tool is intended for personal and educational use only.
+            Users are solely responsible for complying with YouTube's Terms of Service and applicable copyright laws.
+            We do not endorse or encourage the unauthorized downloading of copyrighted content.
+          </p> */}
+        </div>
+      </footer>
     </div>
   );
 }
