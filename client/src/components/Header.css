@@ -1,0 +1,65 @@
+/* Header.css - Refined */
+.app-header {
+    position: sticky;
+    top: 0;
+    height: 56px;
+    /* Reduced from 64px for sleeker look */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+
+    /* Glassmorphism */
+    background: rgba(var(--bg-body), 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    /* Bigger for desktop */
+    font-weight: 600;
+    /* Slightly bolder for impact */
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    opacity: 0.95;
+}
+
+.header-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-element);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-subtle);
+    text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+    .app-header {
+        padding: 0 1rem;
+    }
+
+    .header-title {
+        font-size: 1.1rem;
+        /* Scaled down for mobile */
+    }
+}
+
+@media (max-width: 640px) {
+    .app-header {
+        padding: 0 1rem;
+    }
+}

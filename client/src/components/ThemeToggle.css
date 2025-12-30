@@ -1,0 +1,103 @@
+/* Switch Container */
+.theme-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    /* Hand pointer as requested */
+}
+
+/* Hide default checkbox */
+.theme-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    /* Hand pointer */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-element);
+    border: 1px solid var(--border-subtle);
+    transition: .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* The Moving Knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* Checked (Light Mode) State */
+input:checked+.slider {
+    background-color: var(--bg-element);
+    /* Keep bg neutral */
+}
+
+input:checked+.slider:before {
+    transform: translateX(30px);
+    background-color: #f59e0b;
+    /* Amber for sun */
+}
+
+/* Icons Wrapper */
+.icon-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.icon {
+    font-size: 14px;
+    line-height: 1;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+/* Logic: When unchecked (dark), moon is visible on right? No, icons stay put. */
+/* Dark Mode: Knob is Left. Moon icon should be visible on Right? 
+   Actually standard is: Icon represents structure. 
+   Let's just place them nicely. */
+
+.icon.moon {
+    opacity: 0.6;
+}
+
+.icon.sun {
+    opacity: 0.6;
+}
+
+/* Active State Highlights */
+input:checked~.slider .icon.sun {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+}
+
+input:not(:checked)~.slider .icon.moon {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
