@@ -6,16 +6,33 @@
 const API_BASE_URL = 'http://localhost:5000/api';
 
 /**
+ * Selects the best audio itag from available audio formats
+ * @param {Array} audioFormats - Available audio formats from analysis
+ * @returns {number|null} Best audio itag or null if none found
+ */
+const selectBestAudioItag = (audioFormats) => {
+    if (!audioFormats || audioFormats.length === 0) {
+        return null;
+    }
+
+    // Sort by bitrate (highest first) and select the best one
+    const sorted = [...audioFormats].sort((a, b) => (b.bitrate || 0) - (a.bitrate || 0));
+
+    return sorted[0].itag;
+};
+
+/**
  * Constructs the download URL based on mode and selections
  * @param {Object} params - Download parameters
  * @param {string} params.url - YouTube video URL
  * @param {string} params.mode - "audio" or "video"
  * @param {number|null} params.bitrate - Audio bitrate (128 or 320)
  * @param {number|null} params.videoItag - Selected video itag
+ * @param {Array} params.audioFormats - Available audio formats from analysis
  * @param {Array} params.videoFormats - Available video formats from analysis
  * @returns {string} Download URL
  */
-export const buildDownloadUrl = ({ url, mode, bitrate, videoItag, videoFormats }) => {
+export const buildDownloadUrl = ({ url, mode, bitrate, videoItag, audioFormats, videoFormats }) => {
     const params = new URLSearchParams();
     params.append('url', url);
 
@@ -25,8 +42,16 @@ export const buildDownloadUrl = ({ url, mode, bitrate, videoItag, videoFormats }
         if (bitrate) {
             params.append('bitrate', bitrate);
         }
-        // Use a default audio itag or the selected one
-        // For audio_mp3, backend typically doesn't need itag
+        // Select best audio itag from available audio formats
+        console.log('[DEBUG] Audio mode - audioFormats:', audioFormats);
+        const audioItag = selectBestAudioItag(audioFormats);
+        console.log('[DEBUG] Selected audio itag:', audioItag);
+        if (audioItag) {
+            params.append('itag', audioItag);
+            console.log('[DEBUG] Added itag to params');
+        } else {
+            console.warn('[WARNING] No audio itag found!');
+        }
     } else if (mode === 'video') {
         // Video mode: determine if merged is needed
         const selectedFormat = videoFormats.find(f => f.itag === videoItag);

@@ -54,6 +54,7 @@ function App() {
       mode: selectedMode,
       bitrate: selectedBitrate,
       videoItag: selectedVideoItag,
+      audioFormats: analysisResult?.audioFormats || [],
       videoFormats: analysisResult?.videoFormats || [],
     });
     window.location.href = downloadUrl;
